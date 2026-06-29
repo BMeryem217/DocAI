@@ -1,0 +1,26 @@
+<head>
+    …
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Formulaire de diagnostic</h1>
+
+    <form method="post" action="/">
+        <fieldset>
+            <legend>Sélectionnez vos symptômes :</legend>
+
+            <div class="checkbox-list">
+              {% for symptom in symptoms %}
+                  <label>
+                      <input type="checkbox" name="{{ symptom }}">
+                      {{ symptom.replace("_", " ")|capitalize }}
+                  </label>
+              {% endfor %}
+            </div>
+        </fieldset>
+
+        <button type="submit">Diagnostiquer</button>
+    </form>
+</div>
+</body>
